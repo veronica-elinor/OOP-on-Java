@@ -9,4 +9,7 @@ public class HW2_4105031027 {
 		a=scn.nextInt();
 		b=scn.nextInt();
 	}
+	
+	public static int countDigitOccurrence (int n, int digit){
+	}
 }
