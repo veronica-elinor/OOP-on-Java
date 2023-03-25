@@ -26,6 +26,10 @@ class Warrior {
 
 	public void Slash(Wizard wizard){
 		// please write your code here
+      	if (MP>0){
+          MP -= 20;
+        }
+      	
 	}
 
 	public boolean CheckAlive() {
@@ -36,7 +40,7 @@ class Warrior {
       	else {
           System.out.println("\"Wizard Win\"");
           return false;
-      
+        }
 	}
 }
 
@@ -47,11 +51,12 @@ class Wizard {
   
 	public int getHP() {
 		// please write your code here
-
+      	return HP;
 	}
 
 	public int getMP() {
 		// please write your code here
+      	return MP;
 	}
 
 	public Wizard() {
@@ -67,12 +72,21 @@ class Wizard {
 
 	public void FireBall(Warrior warrior){
 		// please write your code here
+      	MP -= 100;
 	}
 
 	public boolean CheckAlive() {
 		// please write your code here
+      	if (HP>0){
+          return true;
+        }
+      	else {
+          System.out.println("\"Warrior Win\"");
+          return false;
+        }
 	}
 }
+
 
 public class Main {
 	public static void main(String[] args) {
