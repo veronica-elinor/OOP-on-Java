@@ -28,4 +28,14 @@ public class HW2_4105031027 {
 		}
 		return count;
 	}
+	// Count the number of valid house street numbers
+        int count = 0;
+        for (int i = a; i <= b; i++) {
+            int powerOfZero = i % 10;
+            int powerOfOne = (i / 10) % 10;
+            if (powerOfZero != powerOfOne && countDigitOccurrence(i, powerOfZero) == 1 && countDigitOccurrence(i, powerOfOne) == 1) {
+                count++;
+            }
+        }
+        System.out.println(count);
 }
