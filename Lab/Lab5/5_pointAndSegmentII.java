@@ -1,24 +1,64 @@
 class Point {
     // Same as previous question
+  private double x;
+    private double y;
+    
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    public double getX() {
+        return this.x;
+    }
+    
+    public double getY() {
+        return this.y;
+    }
+    
+    public double getDistance(Point p) {
+        double dx = this.x - p.getX();
+        double dy = this.y - p.getY();
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
 
 class Line {
     // Declaring member variables here
+    private Point p1;
+    private Point p2;
 
     public Line(Point p1, Point p2) {
         // please write your code here
+        this.p1 = p1;
+        this.p2 = p2;
     }
 
-    public Line(Point p1) {
+    public Line(Point p) {
         // please write your code here
+        this.p1 = new Point(0, 0);
+        this.p2 = p;
     }
 
     public double getLength() {
         // please write your code here
+      return this.p1.getDistance(this.p2);
     }
 
     public Point getIntersection(Line l) {
         // please write your code here
+      double x1 = this.p1.getX();
+        double y1 = this.p1.getY();
+        double x2 = this.p2.getX();
+        double y2 = this.p2.getY();
+        double x3 = l.p1.getX();
+        double y3 = l.p1.getY();
+        double x4 = l.p2.getX();
+        double y4 = l.p2.getY();
+        double denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+        double x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / denominator;
+        double y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / denominator;
+        return new Point(x, y);
     }
 }
 // 建立兩個Point實例
