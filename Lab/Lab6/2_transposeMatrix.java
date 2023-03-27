@@ -1,8 +1,8 @@
 public class Main {
   public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
-        int m = scn.nextInt();
-        int n = scn.nextInt();
+        int m+1 = scn.nextInt();
+        int n+1 = scn.nextInt();
 
         int[][] matrix = new int[m][n];
         for (int i = 0; i < m; i++) {
