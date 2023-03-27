@@ -1,46 +1,45 @@
 class Warrior {
 	// Declaring member variables here
-  	public int HP;
-  	public int MP;
+ 	int HP;
+    int MP;
 
 	public int getHP() {
 		// please write your code here
-      	return HP;
+      return this.HP;
 	}
 
 	public int getMP() {
 		// please write your code here
-      	return MP;
+      return this.MP;
 	}
 
 	public Warrior() {
 		// please write your code here
-      	int HP = 700:
-      	int MP = 100;
+      	this.HP = 700;
+        this.MP = 100;
 	}
 
 	public Warrior(int HP, int MP) {
 		// please write your code here
-      	setWarrior(HP, MP);
+      	this.HP = HP;
+        this.MP = MP;
 	}
 
 	public void Slash(Wizard wizard){
 		// please write your code here
-      	if (MP>0){
-          MP -= 20;
+      if (this.MP >= 20) {
+            this.MP -= 20;
+            wizard.HP -= 60;
         }
-      	
 	}
 
 	public boolean CheckAlive() {
 		// please write your code here
-      	if (HP>0){
-          return true;
+      if (this.HP <= 0) {
+            System.out.println("Wizard win");
+            return false;
         }
-      	else {
-          System.out.println("\"Wizard Win\"");
-          return false;
-        }
+        return true;
 	}
 }
 
@@ -48,46 +47,47 @@ class Wizard {
 	// Declaring member variables here
   	int HP;
     int MP;
-  
-	public int getHP() {
+	
+  public int getHP() {
 		// please write your code here
-      	return HP;
+      return this.HP;
 	}
 
 	public int getMP() {
 		// please write your code here
-      	return MP;
+      return this.MP;
 	}
 
 	public Wizard() {
 		// please write your code here
-      	int HP = 300;
-      	int MP = 500;
+      	this.HP = 300;
+        this.MP = 500;
 	}
 
 	public Wizard(int HP, int MP) {
 		// please write your code here
-      	setWizard(HP, MP);
+      	this.HP = HP;
+        this.MP = MP;
 	}
 
 	public void FireBall(Warrior warrior){
 		// please write your code here
-      	MP -= 100;
+      if (this.MP >= 100) {
+            this.MP -= 100;
+            warrior.HP -= 140;
+        }
 	}
 
 	public boolean CheckAlive() {
 		// please write your code here
-      	if (HP>0){
-          return true;
+      if (this.HP <= 0) {
+            System.out.println("Warrior win");
+            return false;
         }
-      	else {
-          System.out.println("\"Warrior Win\"");
-          return false;
-        }
+        return true;
 	}
 }
-
-
+//test function
 public class Main {
 	public static void main(String[] args) {
 		Warrior warrior = new Warrior();
