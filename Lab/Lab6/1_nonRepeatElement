@@ -1,0 +1,33 @@
+class NonRepeatElement {
+  public static int NonRepeatElement(int[] array){
+    // code here
+    int[] array;
+    if (array == null || array.length == 0) {
+      return 0;
+    } else if (array.length < 2) {
+      return 1;
+    } else {
+      int i = 0;
+      for (int j = 1; j < array.length; j++) {
+
+        if (array[i] != array[j]) {
+          // get different element to move index
+          array[++i] = array[j];
+        }
+      }
+      return i + 1;
+    }
+    
+  }
+}
+
+//test function
+public class Main {
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int[] arr = new int[]{4,1,2,3,2};
+	    int result = NonRepeatElement.NonRepeatElement(arr);
+	    System.out.print(result);
+	    sc.close();
+	}
+}
