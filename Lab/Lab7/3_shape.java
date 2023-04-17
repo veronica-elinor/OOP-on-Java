@@ -1,55 +1,37 @@
-class Oval extends Shape// Inherit here { 
+class Oval extends Shape { 
     // write your code here
   private int major;
   private int minor;
   private final int PI = 3.14;
 
   public Oval(int major, int minor) {
-	
-	protected String getName() {
-		return name;
-	}
-	protected void setName(String name) {
-		this.name = name;
-	}
-	protected double getArea() {
-		return area;
-	}
-	protected void setArea(double area) {
-		this.area = area;
-	}
-	protected double getPerimeter() {
-		return perimeter;
-	}
-	protected void setPerimeter(double perimeter) {
-		this.perimeter = perimeter;
-	}
+  		if (major==minor) {
+          name = "圓形";
+        }
+    	else {
+          name = "橢圓形";
+        }
+  }
+	public showInfo(){
+      
 }
 
-class Rectangle extends Shape// Inherit here {
+class Rectangle extends Shape {
 	// write your code here
   private int width;
   private int height;
 
   public Rectangle(int width, int height) {
-    
+    if (width==height) {
+      name = "正方形";
+    }
+    else {
+      name = "長方形";
+    }
+  }
 
-	protected String getName() {
-		return name;
-	}
-	protected void setName(String name) {
-		this.name = name;
-	}
-	protected double getArea() {
-		return area;
-	}
-	protected void setArea(double area) {
-		this.area = area;
-	}
-	protected double getPerimeter() {
-		return perimeter;
-	}
-	protected void setPerimeter(double perimeter) {
-		this.perimeter = perimeter;
-	}
+	public showInfo(){
+      System.out.println("形狀:"+name);
+      System.out.println("面積":+area);
+      System.out.println("周長"+perimeter);
 }
