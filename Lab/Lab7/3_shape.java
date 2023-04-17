@@ -2,18 +2,26 @@ class Oval extends Shape {
     // write your code here
   private int major;
   private int minor;
-  private final int PI = 3.14;
+  private final double PI = 3.14;
 
   public Oval(int major, int minor) {
+    	this.major=major;
+        this.minor=minor;
   		if (major==minor) {
-          name = "圓形";
+          setName("圓形");
         }
     	else {
-          name = "橢圓形";
+          setName("橢圓形");
         }
+    	setArea(PI*major*minor);
+    	setPerimeter(2*PI*minor+4*(major-minor));
+    
   }
-	public showInfo(){
-      
+	public void showInfo(){
+      	System.out.printf("形狀:%s\n", getName());
+        System.out.printf("面積:%.2f\n", getArea());
+        System.out.printf("周長:%.2f\n", getPerimeter());
+    }
 }
 
 class Rectangle extends Shape {
@@ -22,16 +30,21 @@ class Rectangle extends Shape {
   private int height;
 
   public Rectangle(int width, int height) {
+    this.width=width;
+    this.height=height;
     if (width==height) {
-      name = "正方形";
+      setName("正方形");
     }
     else {
-      name = "長方形";
+      setName("長方形");
     }
+    setArea(width*height);
+    setPerimeter(2*(width+height));
   }
 
-	public showInfo(){
-      System.out.println("形狀:"+name);
-      System.out.println("面積":+area);
-      System.out.println("周長"+perimeter);
+	public void showInfo(){
+      System.out.printf("形狀:%s\n", getName());
+      System.out.printf("面積:%.2f\n", getArea());
+      System.out.printf("周長:%.2f\n", getPerimeter());
+    }
 }
