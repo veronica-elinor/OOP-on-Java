@@ -6,13 +6,13 @@ class Person {
   public String name;
   public int age;
 
-    Person(String name, int age) {
+  public Person(String name, int age) {
         // write your code here
       this.name = name;
       this.age = age;
     }
 
-    void introduce() {
+  public void introduce() {
         // write your code here
       System.out.print(name+" is "+age+" years old");
     }
@@ -22,30 +22,35 @@ class Athlete extends Person {
     // write your code here
   public String sport;
 
-    Athlete(String name, int age, String sport) {
+  public Athlete(String name, int age, String sport) {
         super(name, age);
         // write your code here
+    	this.sport = sport;
     }
 
     @Override
-    void introduce() {
+   public void introduce() {
         super.introduce();
         // write your code here
+      System.out.print(" and plays "+sport+".\n");
     }
 }
 
 class Coach extends Person {
     // write your code here
+  private int experience;
 
-    Coach(String name, int age, int experience) {
+  public Coach(String name, int age, int experience) {
         super(name, age);
         // write your code here
+    	this.experience=experience;
     }
 
     @Override
-    void introduce() {
+  public void introduce() {
         super.introduce();
         // write your code here
+      System.out.print(" and has "+experience+" years of coaching experience.\n");
     }
 }
 
