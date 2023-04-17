@@ -3,11 +3,11 @@ class Dog extends Animal {
   private final String breed;
   
   public Dog (String name, String breed){
-    this.name=name;
+    super(name);
     this.breed=breed;
   }
   
-  public getBreed() {
+  public String getBreed() {
     return breed;
   }
   
@@ -21,11 +21,11 @@ class Cat extends Animal {
   private final boolean isDomestic;
   
   public Cat(String name, boolean isDomestic) {
-    this.name=name;
-    this.breed=breed;
+    super(name);
+    this.isDomestic=isDomestic;
   }
   
-  public void getIsDomestic() {
+  public boolean getIsDomestic() {
   	return isDomestic;
   }
   public void makeSound() {
