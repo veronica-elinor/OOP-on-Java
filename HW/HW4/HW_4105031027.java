@@ -260,13 +260,27 @@ class Store {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
-		return products[0];
+		for(int i=0;i<numProducts;i++)
+		{
+			if(productID==products[i].getID())
+				return products[i];
+		}
+		return null;
 	}
 
 	public boolean addCustomer(int customerID, String customerName, boolean credit) {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
+		if(numCustomers>=customers.length)  //作法同addProduct
+			return false;
+		for(int i=0;i<numCustomers;i++)
+		{
+			if(customerID==customers[i].getID())
+				return false;
+		}
+		customers[numCustomers]=new Customer(customerID,customerName,credit);
+		numCustomers++;
 		return true;
 	}
 
@@ -274,7 +288,12 @@ class Store {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
-		return customers[0];
+		for(int i=0;i<numCustomers;i++)
+		{
+			if(customerID==customers[i].getID())
+				return customers[i];
+		}
+		return null;
 	}
 
 
@@ -282,6 +301,9 @@ class Store {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
+		if(getProduct(productID)==null)
+			return false;
+		getProduct(productID).addShipment(quantity,cost);
 		return true;
 	}
 
@@ -304,10 +326,23 @@ class Store {
 
 	public void outputProducts(Product product) {
 		// TODO Complete your code here.
+		System.out.println("Product Name: "+product.getName());
+		System.out.println("Product ID: "+product.getID());
+		System.out.println("Description: "+product.getDescription());
+		System.out.println("Inventory: "+product.getInventoryCount());
+		System.out.println("Number Sold: "+product.getNumberSold());
+		System.out.println("Total Paid: "+product.getTotalPaid());
+		System.out.println("Price: "+product.getPrice());
 	}
 
 	public void outputCustomers(Customer customer) {
 		// TODO Complete your code here.
+		System.out.println("Customer Name: "+customer.getName());
+		System.out.println("Customer ID: "+customer.getID());
+		System.out.println("Has Credit: "+customer.getCredit());
+		System.out.println("Balance: "+customer.getBalance());
+		System.out.println("Products Purchased --");
+		customer.outputRecentPurchases();
 	}
 }
 
