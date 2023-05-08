@@ -287,6 +287,9 @@ class Store {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
+		if(getCustomer(customerID)==null)
+			return false;
+		getCustomer(customerID).processPayment(amount);
 		return true;
 	}
 
