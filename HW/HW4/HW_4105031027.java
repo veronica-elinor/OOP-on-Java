@@ -244,6 +244,15 @@ class Store {
 		// TODO Complete your code here.
 		
 		// TODO You can change or move the following return statement if necessary.
+		if(numProducts>=products.length)
+			return false;
+		for(int i=0;i<numProducts;i++)
+		{
+			if(productID==products[i].getID())
+				return false;
+		}
+		products[numProducts]=new Product(productID,productName);
+		numProducts++;
 		return true;
 	}
 
