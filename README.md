@@ -1,2 +1,2 @@
 # OOP_on_Java
-Learning OOP on Java in NCHU in 2023
+Learning OOP on Java from NCHU in 2023
